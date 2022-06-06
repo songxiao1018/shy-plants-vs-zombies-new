@@ -1,0 +1,34 @@
+# Project: shy-plants-vs-zombies-new
+# Makefile created by Red Panda C++ 1.0.6
+
+CPP      = clang++.exe
+CC       = clang.exe
+WINDRES  = windres.exe
+RES      = shy-plants-vs-zombies-new_private.res
+OBJ      = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+CLEANOBJ  =  main.o shy-plants-vs-zombies-new_private.res shy-plants-vs-zombies-new.exe
+LIBS     =  -s -lgraphics -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -lgdiplus   -static
+INCS     =  
+CXXINCS  =  
+BIN      = shy-plants-vs-zombies-new.exe
+CXXFLAGS = $(CXXINCS)  -O2 -pipe
+CFLAGS   = $(INCS)  -O2 -pipe
+RM       = del /q /f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(CLEANOBJ) > NUL 2>&1
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c D:/×ÀÃæ/shy-plants-vs-zombies-new/main.cpp -o main.o $(CXXFLAGS) 
+
+shy-plants-vs-zombies-new_private.res: shy-plants-vs-zombies-new_private.rc 
+	$(WINDRES) -i shy-plants-vs-zombies-new_private.rc --input-format=rc -o shy-plants-vs-zombies-new_private.res -O coff 
+
