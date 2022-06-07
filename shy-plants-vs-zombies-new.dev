@@ -1,18 +1,18 @@
 [Project]
 filename = shy-plants-vs-zombies-new.dev
 name = shy-plants-vs-zombies-new
-UnitCount = 36
-Type = 1
+UnitCount = 40
+Type = 0
 Ver = 3
 ObjFiles = 
 Includes = 
 Libs = 
-PrivateResource = shy-plants-vs-zombies-new_private.rc
+PrivateResource = 
 ResourceIncludes = 
 MakeIncludes = 
 Compiler = 
 CppCompiler = 
-Linker = -lgraphics -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -lgdiplus_@@__@@_
+Linker = -static -static-libstdc++ -static-libgcc -lgraphics -luuid -lmsimg32 -lgdi32 -limm32 -lole32 -loleaut32 -lwinmm -lgdiplus_@@__@@_
 IsCpp = 1
 Icon = app.ico
 ExeOutput = 
@@ -29,7 +29,7 @@ PrecompiledHeader =
 CommandLine = 
 Folders = 
 IncludeVersionInfo = 0
-SupportXPThemes = 0
+SupportXPThemes = 1
 CompilerSet = 0
 CompilerSetType = 0
 CompilerSettings = 000000a000000000000010001
@@ -404,17 +404,6 @@ DetectEncoding = 1
 
 
 [Unit32]
-FileName = musics/plant/put_plant.mp3
-Folder = 
-Compile = 0
-Link = 0
-Priority = 1000
-OverrideBuildCmd = 0
-BuildCmd = 
-DetectEncoding = 1
-
-
-[Unit33]
 FileName = musics/background/game_playing.mp3
 Folder = 
 Compile = 0
@@ -425,7 +414,7 @@ BuildCmd =
 DetectEncoding = 1
 
 
-[Unit34]
+[Unit33]
 FileName = musics/background/game_start_music.mp3
 Folder = 
 Compile = 0
@@ -436,7 +425,7 @@ BuildCmd =
 DetectEncoding = 1
 
 
-[Unit35]
+[Unit34]
 FileName = musics/background/Laura Shigihara - Crazy Dave IN-GAME.mp3
 Folder = 
 Compile = 0
@@ -447,7 +436,7 @@ BuildCmd =
 DetectEncoding = 1
 
 
-[Unit36]
+[Unit35]
 FileName = musics/background/Laura Shigihara - Graze the Roof.mp3
 Folder = 
 Compile = 0
@@ -458,9 +447,20 @@ BuildCmd =
 DetectEncoding = 1
 
 
+[Unit36]
+FileName = musics/game/game_lose.mp3
+Folder = 
+Compile = 0
+Link = 0
+Priority = 1000
+OverrideBuildCmd = 0
+BuildCmd = 
+DetectEncoding = 1
+
+
 [Unit37]
-FileName = image/plant/9.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/game/game_win.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -470,8 +470,8 @@ DetectEncoding = 1
 
 
 [Unit38]
-FileName = image/plant/10.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/game/mouse_click_sun.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -481,8 +481,8 @@ DetectEncoding = 1
 
 
 [Unit39]
-FileName = image/plant/11.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/plant/put_plant.mp3
+Folder = 其他文件/musics/plant
 Compile = 0
 Link = 0
 Priority = 1000
@@ -492,8 +492,8 @@ DetectEncoding = 1
 
 
 [Unit40]
-FileName = image/plant/12.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/zombie/zombie_hurt.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000

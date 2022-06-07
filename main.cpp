@@ -61,7 +61,7 @@ using namespace std ;
 /*  豌豆    植物   僵尸                                                                */
 /*                                                                                     */
 /***************************************************************************************/
-struct bens     { // 豌豆 bens_x     bens_y                     display_mood
+struct bens    { // 豌豆 bens_x     bens_y                     display_mood
 	int  bens_x       = 0;       // x坐标
 	int  bens_y       = 0;       // y坐标
 	bool display_mood = 0;       // 显示模式
@@ -121,9 +121,8 @@ PIMAGE lose;        PIMAGE win;
 /*  定义音乐指针                                                                       */
 /*                                                                                     */
 /***************************************************************************************/
-MUSIC music_background_start;
-MUSIC music_background_play;
-MUSIC music_zombies_hurt;
+MUSIC music_background;
+MUSIC music_hurt;
 MUSIC music_win;
 MUSIC music_lose;
 
@@ -151,8 +150,7 @@ int main(){
 	game_init();
 	game_zombies.zombies_x = MAP_LONG * plant_w;
 	game_zombies.zombies_y = 2 ;
-	
-	
+
     for ( ; is_run() ; delay_ms(100)){
 		// 游戏帧数记录
 		if(Game_frame_second > 1200) Game_frame_second = 0;
@@ -184,6 +182,8 @@ void game_init(){
     showmouse(0);                                                // 鼠标显示模式-隐藏
     
     game_loaddata();          // 调用加载图片
+	
+	music_background.Play(0);
 	
 	game_ui();                  // 调用开始游戏窗口
 	
@@ -247,11 +247,10 @@ void game_loaddata (){
     getimage(win        ,"./image/others/win.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
 	getimage(start      ,"./image/others/start.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
 	
-	music_background_start.OpenFile("./musics/background/game_start_music.mp3");
-	music_background_play.OpenFile("./musics/background/game_start_music.mp3");
-	music_lose.OpenFile("./musics/background/Laura Shigihara - Graze the Roof.mp3");
-	music_win.OpenFile("./musics/background/Laura Shigihara - Graze the Roof.mp3");
-	music_zombies_hurt.OpenFile("./musics/background/Laura Shigihara - Graze the Roof.mp3");
+	music_background.OpenFile ("./musics/background/game_start_music.mp3");
+	music_lose.OpenFile("./musics/game/game_lose.mp3");
+	music_win.OpenFile("./musics/game/game_win.mp3");
+	music_hurt.OpenFile("./musics/zombie/zombie_hurt.mp3");
 }
 /***************************************************************************************/
 /*                                                                                     */
@@ -424,14 +423,17 @@ void game_update(){
 	// 豌豆攻击
 	if (game_zombies.display_mood == 1) {
 		if (game_ben1.display_mood == 1 && game_ben1.bens_x > game_zombies.zombies_x && game_ben1.bens_x < game_zombies.zombies_x + 100 && game_ben1.bens_y == game_zombies.zombies_y){
+			music_hurt.Play(0);
 			game_ben1.display_mood = 0;
 			game_zombies.zombies_blood -= 10;
 		}
 		if (game_ben2.display_mood == 1 && game_ben2.bens_x > game_zombies.zombies_x && game_ben2.bens_x < game_zombies.zombies_x + 100 && game_ben2.bens_y == game_zombies.zombies_y){
+			music_hurt.Play(0);
 			game_ben2.display_mood = 0;
 			game_zombies.zombies_blood -= 10;
 		}
 		if (game_ben3.display_mood == 1 && game_ben3.bens_x > game_zombies.zombies_x && game_ben3.bens_x < game_zombies.zombies_x + 100 && game_ben3.bens_y == game_zombies.zombies_y){
+			music_hurt.Play(0);
 			game_ben3.display_mood = 0;
 			game_zombies.zombies_blood -= 10;
 		}
@@ -449,7 +451,7 @@ void game_update(){
 	}
 	
 	// 游戏胜利
-	if (score > 9){
+	if (score > 4){
 		game_win();
 	}
 	
@@ -475,11 +477,13 @@ void game_update(){
 /*                                                                                     */
 /***************************************************************************************/
 void game_lose (){
+	music_lose.Play(0);
 	putimage_transparent(NULL,lose,0,0,WHITE);
 	getch();
 	game_zombies.zombies_x = MAP_LONG * plant_w;
 	game_zombies.zombies_y = 2;
 	score = 0;
+	music_lose.Stop();
 }
 
 /***************************************************************************************/
@@ -488,11 +492,13 @@ void game_lose (){
 /*                                                                                     */
 /***************************************************************************************/
 void game_win(){
+	music_win.Play(0);
 	putimage_transparent(NULL,win,0,0,WHITE);
 	getch();
 	game_zombies.zombies_x = MAP_LONG * plant_w;
 	game_zombies.zombies_y = 2;
 	score = 0;
+	music_win.Stop();
 }
 
 
