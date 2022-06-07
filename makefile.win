@@ -27,7 +27,7 @@ $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
 main.o: main.cpp
-	$(CPP) -c D:/×ÀÃæ/shy-plants-vs-zombies-new/main.cpp -o main.o $(CXXFLAGS) 
+	$(CPP) -c D:/00000project/shy-plants-vs-zombies-new/main.cpp -o main.o $(CXXFLAGS) 
 
 shy-plants-vs-zombies-new_private.res: shy-plants-vs-zombies-new_private.rc 
 	$(WINDRES) -i shy-plants-vs-zombies-new_private.rc --input-format=rc -o shy-plants-vs-zombies-new_private.res -O coff 

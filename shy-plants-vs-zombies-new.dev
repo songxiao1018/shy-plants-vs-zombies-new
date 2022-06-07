@@ -1,7 +1,7 @@
 [Project]
 filename = shy-plants-vs-zombies-new.dev
 name = shy-plants-vs-zombies-new
-UnitCount = 30
+UnitCount = 36
 Type = 1
 Ver = 3
 ObjFiles = 
@@ -393,8 +393,8 @@ DetectEncoding = 1
 
 
 [Unit31]
-FileName = image/plant/3.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/zombie/zombie_eating_plants.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -404,8 +404,8 @@ DetectEncoding = 1
 
 
 [Unit32]
-FileName = image/plant/4.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/plant/put_plant.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -415,8 +415,8 @@ DetectEncoding = 1
 
 
 [Unit33]
-FileName = image/plant/5.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/background/game_playing.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -426,8 +426,8 @@ DetectEncoding = 1
 
 
 [Unit34]
-FileName = image/plant/6.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/background/game_start_music.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -437,8 +437,8 @@ DetectEncoding = 1
 
 
 [Unit35]
-FileName = image/plant/7.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/background/Laura Shigihara - Crazy Dave IN-GAME.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
@@ -448,8 +448,8 @@ DetectEncoding = 1
 
 
 [Unit36]
-FileName = image/plant/8.jpg
-Folder = 其他文件/image/plant_peashooter
+FileName = musics/background/Laura Shigihara - Graze the Roof.mp3
+Folder = 
 Compile = 0
 Link = 0
 Priority = 1000
