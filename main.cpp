@@ -146,12 +146,12 @@ void game_win       ();       // 游戏失败
 /*                                                                                     */
 /***************************************************************************************/
 int main(){
-		
+	
 	game_init();
 	game_zombies.zombies_x = MAP_LONG * plant_w;
 	game_zombies.zombies_y = 2 ;
-
-    for ( ; is_run() ; delay_ms(100)){
+	
+	for ( ; is_run() ; delay_ms(100)){
 		// 游戏帧数记录
 		if(Game_frame_second > 1200) Game_frame_second = 0;
 		else                         Game_frame_second ++ ;
@@ -174,14 +174,14 @@ int main(){
 /*                                                                                     */
 /***************************************************************************************/
 void game_init(){
-    setcaption("shy's PVZ new remake");                          // 设置窗口名称
-    initgraph(plant_w * (MAP_LONG), plant_h * (MAP_HEIGHT + 1)); // 设置窗口大小
-    setrendermode(RENDER_MANUAL);                                // 设置窗口更新模式-手动
-    ege_enable_aa(true);                                         // 设置窗口抗锯齿
-    setbkcolor(EGERGB(0, 0, 0));                                 // 窗口背景色
-    showmouse(0);                                                // 鼠标显示模式-隐藏
-    
-    game_loaddata();          // 调用加载图片
+	setcaption("shy's PVZ new remake");                          // 设置窗口名称
+	initgraph(plant_w * (MAP_LONG), plant_h * (MAP_HEIGHT + 1)); // 设置窗口大小
+	setrendermode(RENDER_MANUAL);                                // 设置窗口更新模式-手动
+	ege_enable_aa(true);                                         // 设置窗口抗锯齿
+	setbkcolor(EGERGB(0, 0, 0));                                 // 窗口背景色
+	showmouse(0);                                                // 鼠标显示模式-隐藏
+	
+	game_loaddata();          // 调用加载图片
 	
 	music_background.Play(0);
 	
@@ -200,51 +200,51 @@ void game_init(){
 /*                                                                                     */
 /***************************************************************************************/
 void game_loaddata (){
-    // 创建图片对象
-    plant1  = newimage();      plant2  = newimage();      plant3  = newimage();
-    plant4  = newimage();      plant5  = newimage();      plant6  = newimage();
-    plant7  = newimage();      plant8  = newimage();      plant9  = newimage();
-    plant10 = newimage();      plant11 = newimage();      plant12 = newimage();
-    
-    zombie1 = newimage();      zombie2 = newimage();      zombie3 = newimage();
-    zombie4 = newimage();      zombie5 = newimage();      zombie6 = newimage();
-    zombie7 = newimage();      zombie8 = newimage();      zombie9 = newimage();
-    zombie10= newimage();      zombie11= newimage();      zombie12= newimage();
-    
-    ben= newimage(); background= newimage(); lose= newimage(); win= newimage();
+	// 创建图片对象
+	plant1  = newimage();      plant2  = newimage();      plant3  = newimage();
+	plant4  = newimage();      plant5  = newimage();      plant6  = newimage();
+	plant7  = newimage();      plant8  = newimage();      plant9  = newimage();
+	plant10 = newimage();      plant11 = newimage();      plant12 = newimage();
+	
+	zombie1 = newimage();      zombie2 = newimage();      zombie3 = newimage();
+	zombie4 = newimage();      zombie5 = newimage();      zombie6 = newimage();
+	zombie7 = newimage();      zombie8 = newimage();      zombie9 = newimage();
+	zombie10= newimage();      zombie11= newimage();      zombie12= newimage();
+	
+	ben= newimage(); background= newimage(); lose= newimage(); win= newimage();
 	start = newimage();
-
-    // 载入图片
-    getimage(plant1 ,"./image/plant/1.jpg" ,plant_w,plant_h);
-    getimage(plant2 ,"./image/plant/2.jpg" ,plant_w,plant_h);
-    getimage(plant3 ,"./image/plant/3.jpg" ,plant_w,plant_h);
-    getimage(plant4 ,"./image/plant/4.jpg" ,plant_w,plant_h);
-    getimage(plant5 ,"./image/plant/5.jpg" ,plant_w,plant_h);
-    getimage(plant6 ,"./image/plant/6.jpg" ,plant_w,plant_h);
-    getimage(plant7 ,"./image/plant/7.jpg" ,plant_w,plant_h);
-    getimage(plant8 ,"./image/plant/8.jpg" ,plant_w,plant_h);
-    getimage(plant9 ,"./image/plant/9.jpg" ,plant_w,plant_h);
-    getimage(plant10,"./image/plant/10.jpg",plant_w,plant_h);
-    getimage(plant11,"./image/plant/11.jpg",plant_w,plant_h);
-    getimage(plant12,"./image/plant/12.jpg",plant_w,plant_h);
-    
-    getimage(zombie1 ,"./image/zombie/1.jpg" ,zombie_w,zombie_h);
-    getimage(zombie2 ,"./image/zombie/2.jpg" ,zombie_w,zombie_h);
-    getimage(zombie3 ,"./image/zombie/3.jpg" ,zombie_w,zombie_h);
-    getimage(zombie4 ,"./image/zombie/4.jpg" ,zombie_w,zombie_h);
-    getimage(zombie5 ,"./image/zombie/5.jpg" ,zombie_w,zombie_h);
-    getimage(zombie6 ,"./image/zombie/6.jpg" ,zombie_w,zombie_h);
-    getimage(zombie7 ,"./image/zombie/7.jpg" ,zombie_w,zombie_h);
-    getimage(zombie8 ,"./image/zombie/8.jpg" ,zombie_w,zombie_h);
-    getimage(zombie9 ,"./image/zombie/9.jpg" ,zombie_w,zombie_h);
-    getimage(zombie10,"./image/zombie/10.jpg",zombie_w,zombie_h);
-    getimage(zombie11,"./image/zombie/11.jpg",zombie_w,zombie_h);
-    getimage(zombie12,"./image/zombie/12.jpg",zombie_w,zombie_h);
-    
-    getimage(ben        ,"./image/ben/1.jpg",ben_w,ben_h);
-    getimage(background ,"./image/others/background.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
-    getimage(lose       ,"./image/others/lose.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
-    getimage(win        ,"./image/others/win.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
+	
+	// 载入图片
+	getimage(plant1 ,"./image/plant/1.jpg" ,plant_w,plant_h);
+	getimage(plant2 ,"./image/plant/2.jpg" ,plant_w,plant_h);
+	getimage(plant3 ,"./image/plant/3.jpg" ,plant_w,plant_h);
+	getimage(plant4 ,"./image/plant/4.jpg" ,plant_w,plant_h);
+	getimage(plant5 ,"./image/plant/5.jpg" ,plant_w,plant_h);
+	getimage(plant6 ,"./image/plant/6.jpg" ,plant_w,plant_h);
+	getimage(plant7 ,"./image/plant/7.jpg" ,plant_w,plant_h);
+	getimage(plant8 ,"./image/plant/8.jpg" ,plant_w,plant_h);
+	getimage(plant9 ,"./image/plant/9.jpg" ,plant_w,plant_h);
+	getimage(plant10,"./image/plant/10.jpg",plant_w,plant_h);
+	getimage(plant11,"./image/plant/11.jpg",plant_w,plant_h);
+	getimage(plant12,"./image/plant/12.jpg",plant_w,plant_h);
+	
+	getimage(zombie1 ,"./image/zombie/1.jpg" ,zombie_w,zombie_h);
+	getimage(zombie2 ,"./image/zombie/2.jpg" ,zombie_w,zombie_h);
+	getimage(zombie3 ,"./image/zombie/3.jpg" ,zombie_w,zombie_h);
+	getimage(zombie4 ,"./image/zombie/4.jpg" ,zombie_w,zombie_h);
+	getimage(zombie5 ,"./image/zombie/5.jpg" ,zombie_w,zombie_h);
+	getimage(zombie6 ,"./image/zombie/6.jpg" ,zombie_w,zombie_h);
+	getimage(zombie7 ,"./image/zombie/7.jpg" ,zombie_w,zombie_h);
+	getimage(zombie8 ,"./image/zombie/8.jpg" ,zombie_w,zombie_h);
+	getimage(zombie9 ,"./image/zombie/9.jpg" ,zombie_w,zombie_h);
+	getimage(zombie10,"./image/zombie/10.jpg",zombie_w,zombie_h);
+	getimage(zombie11,"./image/zombie/11.jpg",zombie_w,zombie_h);
+	getimage(zombie12,"./image/zombie/12.jpg",zombie_w,zombie_h);
+	
+	getimage(ben        ,"./image/ben/1.jpg",ben_w,ben_h);
+	getimage(background ,"./image/others/background.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
+	getimage(lose       ,"./image/others/lose.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
+	getimage(win        ,"./image/others/win.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
 	getimage(start      ,"./image/others/start.jpg",MAP_LONG * plant_w , MAP_HEIGHT * plant_h);
 	
 	music_background.OpenFile ("./musics/background/game_start_music.mp3");
@@ -467,8 +467,8 @@ void game_update(){
 	char s[5];
 	sprintf(s, "%d", score);
 	outtextxy(71 * 7, 10, s);
-
-
+	
+	
 }
 
 /***************************************************************************************/
@@ -500,20 +500,4 @@ void game_win(){
 	score = 0;
 	music_win.Stop();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
