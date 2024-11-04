@@ -1,37 +1,3 @@
-## Welcome to GitHub Pages
+# 《植物大战僵尸》C++重制版
 
-You can use the [editor on GitHub](https://github.com/songxiao1018/shy-plants-vs-zombies-new/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/songxiao1018/shy-plants-vs-zombies-new/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+独立使用C++开发并完成了《植物大战僵尸》游戏的复刻项目，重现原作核心机制与像素艺术风格，同时融入创新元素如新植物，提升策略深度与重玩价值。借助第三方2D图形库实现流畅动画，整合原版音效并定制新增内容，构建用户友好的界面与交互设计。通过多线程优化、性能测试与用户反馈驱动迭代，确保游戏在不同硬件上的稳定运行与优质体验。此项目既展示了C++编程能力与严谨的软件工程实践，也锻炼了跨平台开发、资源管理与创新思维能力。
